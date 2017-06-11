@@ -1,0 +1,29 @@
+/* =================================================================
+
+    UTILITIES
+
+================================================================= */
+
+/* -----------------------------------------------------------------
+    Font faces
+----------------------------------------------------------------- */
+
+@each $font-face in $font-faces {
+	@include font-face($font-face, $font-path+$font-face, $style: normal, $weight: normal);
+}
+
+
+/* -----------------------------------------------------------------
+    Colours
+----------------------------------------------------------------- */
+
+@each $colorName, $color in $colors {
+
+	.bg-#{$colorName}{
+		background-color: get-map-item($color, $colors);
+	}
+
+	.border-#{$colorName}{
+		border-color: get-map-item($color, $colors);
+	}
+}

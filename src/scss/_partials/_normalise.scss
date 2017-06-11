@@ -1,0 +1,53 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+html{
+	-ms-text-size-adjust: 100%; // 2
+	-webkit-text-size-adjust: 100%; // 2
+	font-size:62.5%;
+}
+
+body{
+	font-size: $baseFontSize;
+	font-family: $baseFontFamily;
+	line-height: $baseLineHeight;
+}
+
+button{
+	cursor: pointer;
+}
+
+a{
+	color:currentColor;
+	text-decoration:none;
+}
+
+img{
+	border:0;
+	max-width:100%;
+	display:inline-block;
+}
+
+fieldset{
+	border:none;
+}
+
+input{
+
+	&:focus{
+		outline:none;
+	}
+}

@@ -1,0 +1,105 @@
+/* =================================================================
+
+    MIXINS
+
+================================================================= */
+
+
+/* -----------------------------------------------------------------
+    breakpoints
+----------------------------------------------------------------- */
+
+
+	@mixin bp($size) {
+
+		@if $size == xs {
+
+			@media (max-width: $screenXS) {
+				@content;
+			}
+		}@else if $size == s {
+
+			@media (min-width: $screenS) {
+				@content;
+			}
+
+		} @else if $size == m {
+
+			@media (min-width: $screenM) {
+				@content;
+			}
+
+		} @else if $size == l {
+
+			@media (min-width: $screenL) {
+				@content;
+			}
+
+		} @else if $size == xl {
+
+			@media (min-width: $screenXL) {
+				@content;
+			}
+
+		} @else {
+
+			@media (min-width: $size) {
+				@content;
+			}
+
+		}
+
+	}
+
+
+/* -----------------------------------------------------------------
+	clearfix
+----------------------------------------------------------------- */
+
+
+@mixin clearfix(){
+	clear: both;
+
+	&:before,
+	&:after {
+		content: "";
+		display: table;
+	}
+
+	&:after {
+		clear:both;
+	}
+}
+
+
+/* -----------------------------------------------------------------
+	hide text
+----------------------------------------------------------------- */
+
+	@mixin hide-text() {
+		font: 0/0 a;
+		color: transparent;
+		text-shadow: none;
+		background-color: transparent;
+		border: 0;
+	}
+
+
+/* -----------------------------------------------------------------
+	font faces
+----------------------------------------------------------------- */
+
+@mixin font-face($font-name, $file-name, $weight: normal, $style: normal) {
+	$filename : to-lower-case(str-replace($file-name, ' ', '-'));
+
+	@font-face {
+		font-family: quote($font-name);
+		src: url($filename + '.eot');
+		src: url($filename + '.eot?#iefix')  format('embedded-opentype'),
+		url($filename + '.woff') format('woff'),
+		url($filename + '.ttf')  format('truetype'),
+		url($filename + '.svg##{$font-name}')  format('svg');
+		font-weight: $weight;
+		font-style: $style;
+	}
+}

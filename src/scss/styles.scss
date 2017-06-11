@@ -1,3 +1,8 @@
-	.test{
-		color: red;
-	}
+	// Shared sitewide styles
+
+	@import 
+		"_partials/variables",
+		"_partials/functions",
+		"_partials/mixins",
+		"_partials/normalise",
+		"_partials/utilities";
