@@ -1,5 +1,6 @@
 	
 	import foursquareAPI from './modules/foursquare.js';
+	import resultsListModule from './modules/results-list.js';
 
 
 	const config = {
@@ -21,6 +22,14 @@
 
 		fourSquareInstance.getVenuesNear(locationSearchBox.value).then(venuesArray => {
 			console.log(venuesArray);
+
+			const resultsList = resultsListModule();
+			const resultsListInstance = new resultsList();
+
+
+			resultsListInstance.createResultsList(venuesArray, searchResults);
+
+
 		});
 
 	});
