@@ -12,5 +12,15 @@
 	const fourSquare = foursquareAPI(config);
 	const fourSquareInstance = new fourSquare();
 
+	const locationSearchForm = document.querySelector("#venuesByLocation");
+	const locationSearchBox = locationSearchForm.querySelector("#location");
+	const searchResults = document.querySelector(".search-results");
 
-	console.log(fourSquareInstance);
+	locationSearchForm.addEventListener("submit", function (e){
+		e.preventDefault();
+
+		fourSquareInstance.getVenuesNear(locationSearchBox.value).then(venuesArray => {
+			console.log(venuesArray);
+		});
+
+	});

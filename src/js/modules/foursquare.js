@@ -7,9 +7,10 @@ export default (config) => class fourSquare {
 		this.mode = config.mode;
 	}
 
-	getValuesNear () {
+	getVenuesNear (location) {
+		const apiURL = `https://api.foursquare.com/v2/venues/explore?near=${location}&client_id=${this.clientid}&client_secret=${this.secret}&v=${this.version}&m=${this.mode}`;
 
-		console.log(this.clientid);
+		console.log(apiURL);
 
 	}
 }
