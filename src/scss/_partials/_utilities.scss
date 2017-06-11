@@ -14,6 +14,32 @@
 
 
 /* -----------------------------------------------------------------
+    Icomoon Icons
+----------------------------------------------------------------- */
+
+// Generate Button Modifiers 
+@each $icon in $icons {
+
+	.icon-#{nth($icon, 1)} {
+		font-size:0;
+
+		&:before{
+			content: '#{nth($icon,2)}';
+			font-family: 'icomoon';
+			speak: none;
+			font-style: normal;
+			font-weight: normal;
+			font-variant: normal;
+			text-transform: none;
+			line-height: 1;
+		}
+
+	}
+
+}
+
+
+/* -----------------------------------------------------------------
     Colours
 ----------------------------------------------------------------- */
 
@@ -25,5 +51,22 @@
 
 	.border-#{$colorName}{
 		border-color: get-map-item($color, $colors);
+	}
+}
+
+/* ----------------------------------------------------------------- */
+
+.btn-search{
+	background: #000000 url('../images/search.svg') no-repeat center center / 60%;
+	width:42px;
+	height:42px;
+	border: none;
+	color: white;
+	text-indent: -9999px;
+	transition: all 0.4s ease-out;
+	cursor: pointer;
+
+	&:hover{
+		background-color: lighten(#000000, 50%);
 	}
 }

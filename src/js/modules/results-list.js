@@ -8,12 +8,15 @@ export default () => class resultsList {
 
 		const listHTML = resultsArray.map((result) => {
 
-			return `<li class="result">
+			return `
+				<li class='result'>
+					<div class="inner">
 						<hgroup>
 							<h2>${result.name}</h2>
 							<h3>${result.address}</h3>
 						</hgroup>
-					</li>`;
+					</div>
+				</li>`;
 
 		}).join('');
 

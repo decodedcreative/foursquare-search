@@ -26,3 +26,23 @@
 			padding-bottom: $sectionPadding;
 		}
 	}
+
+	.row{
+		display: flex;
+		flex-flow: row wrap;
+	}
+
+
+	input{
+		&[type="text"],
+		&[type="search"]{
+			padding: 10px;
+			appearance: none;
+			border: 1px solid #CCCCCC;
+		}
+	}
+
+	label{
+		margin-bottom: 20px;
+		display: block;
+	}
