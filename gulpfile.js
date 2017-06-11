@@ -60,7 +60,7 @@ gulp.task('lint', () => {
 
 gulp.task('es6', function() {
 	browserify({
-		entries: './src/js/scripts.js',
+		entries: './src/js/venue-search.js',
 		debug: true,
 		transform: [babelify.configure({
 		  presets: ['es2015']
