@@ -14,8 +14,6 @@ export default (config) => class fourSquare {
 			.then((response) => response.json())
 				.then(function(data) {
 
-					console.log(data);
-
 					const venues = data.response.groups[0].items;
 					let venueAddress = "";
 					let rating = 0;
